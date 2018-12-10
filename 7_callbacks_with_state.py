@@ -47,7 +47,7 @@ app.layout = html.Div(
             html.Button(id='input_button',
                         n_clicks=0,
                         children='Submit',
-                        style=dict(fontSize=24))
+                        style=dict(fontSize=18))
 
         ),
         dcc.Graph(
