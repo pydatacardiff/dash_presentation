@@ -3,7 +3,6 @@ import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output, State
 import plotly.figure_factory as ff
-import pandas as pd
 import pandas_datareader as web
 from dateutil.relativedelta import relativedelta
 import datetime
