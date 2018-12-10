@@ -18,6 +18,7 @@
 
 # Removing all PyCharm settings from git
 .idea/*
+.idea/vcs.xml
 
 # User-specific stuff
 .idea/**/workspace.xml
