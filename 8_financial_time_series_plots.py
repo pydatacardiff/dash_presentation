@@ -72,17 +72,13 @@ app.layout = html.Div(
                State('date_range', 'start_date'),
                State('date_range', 'end_date')])
 def update_graph(n_clicks, stock, start, end):
-    stock_df_all = web.DataReader(stock, 'robinhood').reset_index()
-    stock_df = stock_df_all.loc[
-        (stock_df_all['begins_at'] >= start) &
-        (stock_df_all['begins_at'] <= end)
-    ].reset_index()
+    stock_df = web.DataReader(stock, 'iex', start, end).reset_index()
     fig = ff.create_candlestick(
-        open=stock_df['open_price'],
-        high=stock_df['high_price'],
-        low=stock_df['low_price'],
-        close=stock_df['close_price'],
-        dates=stock_df['begins_at']
+        open=stock_df['open'],
+        high=stock_df['high'],
+        low=stock_df['low'],
+        close=stock_df['close'],
+        dates=stock_df['date']
     )
     fig['layout']['title'] = 'Candlestick plot for {} stocks'.format(stock)
     return fig
