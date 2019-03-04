@@ -8,7 +8,7 @@ app.layout = html.Div(
         html.H1(
             "My First Dash App"
         )
-    ]
+    ], style=dict(textAlign='center', color='green')
 )
 
 if __name__ == '__main__':
